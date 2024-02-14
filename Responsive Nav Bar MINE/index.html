@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Protest+Strike&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0f3793b933.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Styles Definitios */
+        /* Define body styles and details */
+        body {
+            margin: 0;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Define Background color of the Navbar */
+        .navbar {
+            background-color: black;
+        }
+
+        /* Hide parent child elements of the navigation bar  */
+        .navbar div {
+            display: none;
+        }
+
+        /* Define styles for toggle & brand */
+        .navbar .toggle, .navbar .brand {
+            display: inline-block;
+        }
+
+        /* Define styles for Navbar links */
+        .navbar .link {
+            display: block;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background-color: darkgrey;
+            color: white;
+            border-radius: 3px;
+        }
+
+        /* Change the text and background color of links on hover or click  */
+        .navbar .link:hover, 
+        .navbar .link:active {
+            background-color: white;
+            color: darkgray;
+            
+        }
+
+        /* Specific style for the brand logo */
+        .navbar .brand {
+            width: 10em;
+            text-align: center;
+            padding: 1em;
+            color: white;
+            align-items: center;
+
+        }
+
+        /* Specific styles for apple image/logo */
+        .navbar img {
+            width: 20px;
+            height: auto;
+            margin-left: 10px;
+        }
+
+        /* Remove default text decoration from links */
+        .navbar a {
+            text-decoration: none;
+        }
+
+        /* Style for hamburger button in desktop mode */
+        .navbar .toggle {
+            padding: 1em;
+            color: white;            
+        }
+      
+        /* Media for Desktop */
+        @media (min-width: 48em){ 
+            .navbar {
+                display: flex;
+            }
+
+            .navbar div {
+                display: flex;
+            }
+
+            .navbar .left, .navbar .right {
+                display: flex;
+                flex: 1;
+            }
+
+            .navbar .link {
+                width: auto;
+            }
+
+            .navbar .right {
+                justify-content: flex-end;
+            }
+
+            .navbar .toggle {
+                display: none;
+            }
+        }
+
+        /* Media for SmartPhones */
+        @media (max-width: 48em){ 
+            .navbar.active .toggle {
+                background-color: darkgray;
+                color: white;
+            }
+
+            .navbar .brand {
+                text-align: left; 
+            }
+
+            .navbar.active div {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar Container -->
+    <div class="navbar">        
+            <a href="#" class="toggle" id="nav-hamburger">
+                <i class="fa-solid fa-bars"></i></a>        
+           
+            <!-- Brand and Logo -->
+            <a href="#" class="brand">Manuel-Roma
+                <img src="../Responsive Nav Bar MINE/images/Apple.png" alt="Apple Logo">               
+            </a>       
+               
+            <!-- Links Details - Left Side  -->
+            <div class="left">
+                <a href="#" class="link">Link Number 1</a>
+                <a href="#" class="link">Link Number 2</a>
+            </div>
+
+            <!-- Links Details - Right Side  -->
+            <div class="right">
+                <a href="#" class="link">Link Number 3</a>
+            </div>
+    </div>
+</body>
+
+<!-- Script Details -->
+
+<script>
+    const btnToggle = document.querySelector("#nav-hamburger");
+    const linksWrapper = document.querySelectorAll(".link");
+
+    btnToggle.addEventListener("click", (e) => {
+        btnToggle.parentElement.classList.toggle("active");
+    })
+</script>
+</html>
